@@ -1,9 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI x 教育 延伸閱讀與訂閱</title>
+    <style>
+body {
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+  </style>
+</head>
+
 <body>
 
+<div class="container">
 <p><span style="font-weight: 400;">《翻轉教育》推出【AI賦能教學實戰：前進大師之路！高效備課&times;行政減負&times;應用趨勢】線上課程，邀請講師分享自身的使用經驗，帶你跨過雷區，直接跳躍式升級🌟</span></p>
 <p>📣<a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="nofollow ">早鳥優惠倒數中！立即了解課程</a></p>
 <p><a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="nofollow "><img src="https://flipedu-cdn.parenting.com.tw/upload/kaOD6NGoFqEzYKK4aKWDWMJmF9vXq46KEfSRwnu1.png" /></a></p>
-
+</div>
 </body>
 </html>
