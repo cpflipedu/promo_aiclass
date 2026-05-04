@@ -3,31 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 賦能教學實戰課程介紹優惠說明 </title>
+    <title>AI x 教育 延伸閱讀與訂閱</title>
     <style>
-body {
+        /* 基本樣式重置 */
+        body {
             font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
-            background-color: #ffffff;
+            background-color: transparent; 
             margin: 0;
-            padding: 20px;
+            padding: 10px;
+            overflow: hidden; 
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
+            align-items: flex-start;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 650px; 
             width: 100%;
+            margin: 0 auto;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+            text-align: center; 
         }
-  </style>
+
+        /* 文字內容：縮小字級與間距 */
+        p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        /* 圖片容器：大幅縮小 */
+        .banner-container {
+            width: 100%;
+            max-width: 320px; /* 限制寬度 */
+            margin: 12px auto 0;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .banner-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 160px; /* 強制限制高度，避免撐開 iframe */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .banner-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* 優惠按鈕樣式：更加精簡 */
+        .cta-container {
+            margin: 12px 0;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background-color: #ff6b00 !important; 
+            color: #ffffff !important;
+            text-decoration: none !important;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 2px 6px rgba(255, 107, 0, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .cta-link:hover {
+            background-color: #e66000 !important;
+            transform: translateY(-1px);
+        }
+
+        .promo-icon {
+            margin-right: 6px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
-<p><span style="font-weight: 400;">《翻轉教育》推出【AI賦能教學實戰：前進大師之路！高效備課&times;行政減負&times;應用趨勢】線上課程，邀請講師分享自身的使用經驗，帶你跨過雷區，直接跳躍式升級🌟</span></p>
-<p>📣<a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="nofollow ">早鳥優惠倒數中！立即了解課程</a></p>
-<p><a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="nofollow "><img src="https://flipedu-cdn.parenting.com.tw/upload/kaOD6NGoFqEzYKK4aKWDWMJmF9vXq46KEfSRwnu1.png" /></a></p>
+<div class="container" id="embed-content">
+    <p>
+        <span class="highlight">《翻轉教育》推出【AI賦能教學實戰：前進大師之路！】線上課程</span>，邀請講師帶你跨過雷區，直接跳躍式升級🌟
+    </p>
+    
+    <div class="cta-container">
+        <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener" class="cta-link">
+            <span class="promo-icon">📣</span>早鳥優惠中！立即查看
+        </a>
+    </div>
+
+    <div class="banner-container">
+        <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener">
+            <img src="https://flipedu-cdn.parenting.com.tw/upload/kaOD6NGoFqEzYKK4aKWDWMJmF9vXq46KEfSRwnu1.png" 
+                 alt="AI賦能教學實戰課程海報" 
+                 class="banner-img"
+                 onload="sendHeight()"
+                 onerror="this.style.display='none'"/>
+        </a>
+    </div>
 </div>
+
+<script>
+    /**
+     * 向父視窗傳送高度，確保在 390px 以內
+     */
+    function sendHeight() {
+        requestAnimationFrame(() => {
+            const content = document.getElementById('embed-content');
+            if (content) {
+                // 回傳實際高度，但不超過 390
+                const height = Math.min(content.scrollHeight + 30, 390); 
+                window.parent.postMessage({
+                    type: 'resize-iframe',
+                    height: height
+                }, '*');
+            }
+        });
+    }
+
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    setTimeout(sendHeight, 1000);
+</script>
+
 </body>
 </html>
