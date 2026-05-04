@@ -10,91 +10,113 @@
             font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
             background-color: transparent; 
             margin: 0;
-            padding: 10px;
+            padding: 0;
             overflow: hidden; 
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
+            height: 390px;
         }
 
         .container {
-            max-width: 650px; 
-            width: 100%;
-            margin: 0 auto;
-            border: 1px solid #f0f0f0;
-            border-radius: 12px;
-            padding: 16px 20px;
+            width: 690px;
+            height: 350px; 
+            display: flex;
+            flex-direction: row;
             background-color: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-            text-align: center; 
-        }
-
-        /* 文字內容：縮小字級與間距 */
-        p {
-            color: #444;
-            line-height: 1.6;
-            margin-bottom: 12px;
-            font-size: 15px;
-            text-align: left;
-        }
-
-        .highlight {
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-
-        /* 圖片容器：大幅縮小 */
-        .banner-container {
-            width: 100%;
-            max-width: 320px; /* 限制寬度 */
-            margin: 12px auto 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
             overflow: hidden;
-            border-radius: 6px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+        }
+
+        /* 左側圖片區：確保正方形圖片完整 */
+        .content-left {
+            flex: 1; 
+            background-color: #004da0; /* 配合圖片深藍底色，消除縫隙感 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
         .banner-img {
-            display: block;
             width: 100%;
-            height: auto;
-            max-height: 160px; /* 強制限制高度，避免撐開 iframe */
-            object-fit: contain;
-            transition: transform 0.3s ease;
+            height: 100%;
+            object-fit: contain; /* 確保 1:1 圖片完整顯示，不被切掉 */
+            display: block;
         }
 
-        .banner-img:hover {
-            transform: scale(1.03);
+        /* 右側文字區 */
+        .content-right {
+            flex: 1.1;
+            padding: 25px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
         }
 
-        /* 優惠按鈕樣式：更加精簡 */
+        .sub-title {
+            color: #718096;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            margin: 0 0 12px 0;
+            font-size: 20px;
+            line-height: 1.4;
+            color: #1a202c;
+            font-weight: 800;
+        }
+
+        p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin: 0 0 15px 0;
+            font-size: 14px;
+        }
+
+        .promo-text {
+            color: #2d3748;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-size: 15px;
+            border-left: 3px solid #ff6b00;
+            padding-left: 10px;
+        }
+
+        /* 按鈕樣式：顏色更鮮明 */
         .cta-container {
-            margin: 12px 0;
+            margin-top: 5px;
         }
 
         .cta-link {
             display: inline-block;
-            background-color: #ff6b00 !important; 
+            width: 100%;
+            /* 鮮明暖色漸層 */
+            background: linear-gradient(90deg, #ff8e3c 0%, #ff6b00 50%, #ff4e00 100%) !important;
             color: #ffffff !important;
             text-decoration: none !important;
-            padding: 8px 24px;
+            padding: 14px 0;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 16px;
-            box-shadow: 0 2px 6px rgba(255, 107, 0, 0.2);
-            transition: all 0.2s ease;
+            font-size: 17px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
         }
 
         .cta-link:hover {
-            background-color: #e66000 !important;
-            transform: translateY(-1px);
-        }
-
-        .promo-icon {
-            margin-right: 6px;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
         }
 
         a {
-            color: #3498db;
             text-decoration: none;
         }
     </style>
@@ -103,48 +125,44 @@
 <body>
 
 <div class="container" id="embed-content">
-    <p>
-        《翻轉教育》最新推出 <span class="highlight">【AI賦能教學實戰】直播線上課</span>！五位教育第一線專業講師分享，讓你系統化學習把 AI 用對、用順、用強、用廣，跨過雷區跳躍升級！🌟
-    </p>
-    
-    <div class="cta-container">
-        <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener" class="cta-link">
-            <span class="promo-icon">📣</span>早鳥優惠倒數！立即了解
+    <!-- 左側：圖片區 -->
+    <div class="content-left">
+        <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener" style="width:100%; height:100%; display:block;">
+            <img src="https://flipedu-cdn.parenting.com.tw/upload/XypEenu4GFpc84YS5A1JLodAwFXxUun5DEjw9BVu.png" 
+                 alt="AI賦能教學實戰講師陣容" 
+                 class="banner-img" />
         </a>
     </div>
 
-    <div class="banner-container">
-        <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener">
-            <img src="https://flipedu-cdn.parenting.com.tw/upload/kaOD6NGoFqEzYKK4aKWDWMJmF9vXq46KEfSRwnu1.png" 
-                 alt="AI賦能教學實戰課程海報" 
-                 class="banner-img"
-                 onload="sendHeight()"
-                 onerror="this.style.display='none'"/>
-        </a>
+    <!-- 右側：文字內容 -->
+    <div class="content-right">
+        <div class="sub-title">翻轉教育學院｜最新直播課程</div>
+        <h2>【AI賦能教學實戰】</h2>
+        
+        <p>
+            《翻轉教育》最新推出直播線上課！五位教育第一線專業講師分享，讓你系統化學習把 AI 用對、用順、用強、用廣，跨過雷區跳躍升級！🌟
+        </p>
+        
+        <div class="promo-text">
+            早鳥優惠倒數中！立即了解課程
+        </div>
+        
+        <div class="cta-container">
+            <a href="https://edu.parenting.com.tw/flipedu-ai-empowerment-2097" target="_blank" rel="noopener" class="cta-link">
+                立即了解
+            </a>
+        </div>
     </div>
 </div>
 
 <script>
-    /**
-     * 向父視窗傳送高度，確保在 390px 以內
-     */
     function sendHeight() {
-        requestAnimationFrame(() => {
-            const content = document.getElementById('embed-content');
-            if (content) {
-                // 回傳實際高度，但不超過 390
-                const height = Math.min(content.scrollHeight + 30, 390); 
-                window.parent.postMessage({
-                    type: 'resize-iframe',
-                    height: height
-                }, '*');
-            }
-        });
+        window.parent.postMessage({
+            type: 'resize-iframe',
+            height: 390
+        }, '*');
     }
-
     window.addEventListener('load', sendHeight);
-    window.addEventListener('resize', sendHeight);
-    setTimeout(sendHeight, 1000);
 </script>
 
 </body>
